@@ -27,6 +27,10 @@
         <td th:text="${student.second_name}"></td>
         <td th:text="${student.age}"></td>
         <!-- Ajoutez d'autres colonnes au besoin -->
+        <td>
+            <a th:href="@{|/student/edit/${student.id}|}">Edit</a>
+            <a th:href="@{/student/{id}/delete(id=${student.id})}" onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
     </tr>
     </tbody>
 </table>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add/Edit Seance</title>
+</head>
+<body>
+<h1>Add/Edit Seance</h1>
+<form th:action="@{/seance/saveSeance}" th:object="${seance}" method="post">
+    <input type="hidden" th:field="*{id}"><br>
+    <label for="datedebut">Date Début:</label>
+    <input type="text" id="datedebut" name="datedebut" th:field="*{datedebut}"><br>
+    <label for="datefin">Date Fin:</label>
+    <input type="text" id="datefin" name="datefin" th:field="*{datefin}"><br>
+    <label for="cours">Cours:</label>
+    <input type="text" id="cours" name="cours" th:field="*{cours}"><br>
+    <!-- Add more fields as needed -->
+    <input type="submit" value="Save Seance">
+</form>
+<!-- Add navigation links or other content as needed -->
+</body>
+</html>

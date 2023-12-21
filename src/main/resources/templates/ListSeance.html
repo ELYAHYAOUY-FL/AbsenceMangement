@@ -13,7 +13,6 @@
         <th>Date de Début</th>
         <th>Date de Fin</th>
         <th>Cours</th>
-        <th>Étudiants</th>
         <!-- Ajoutez d'autres colonnes au besoin -->
     </tr>
     </thead>
@@ -25,10 +24,8 @@
         <td th:text="${seance.datefin}"></td>
         <td th:text="${seance.cours}"></td>
         <td>
-            <!-- Bouclez à travers les étudiants associés à chaque séance -->
-            <span th:each="student : ${seance.students}">
-                        <span th:text="${student.firstName + ' ' + student.secondName}"></span>,
-                    </span>
+            <a th:href="@{|/seance/edit/${seance.id}|}">Edit</a>
+            <a th:href="@{/seance/{id}/delete(id=${seance.id})}" onclick="return confirm('Are you sure?')">Delete</a>
         </td>
         <!-- Ajoutez d'autres colonnes au besoin -->
     </tr>

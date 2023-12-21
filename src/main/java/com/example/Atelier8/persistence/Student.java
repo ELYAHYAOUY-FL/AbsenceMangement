@@ -29,4 +29,5 @@ public class Student {
             inverseJoinColumns = @JoinColumn(name = "seance_id"))
     private Set<Seance> seances = new HashSet<>();
 
+
 }
