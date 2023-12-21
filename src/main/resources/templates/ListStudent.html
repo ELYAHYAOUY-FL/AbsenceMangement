@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Étudiants</title>
+</head>
+<body>
+<h1>Liste des Étudiants</h1>
+
+
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Âge</th>
+        <!-- Ajoutez d'autres colonnes au besoin -->
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Utilisez Thymeleaf pour boucler à travers les données des étudiants -->
+    <tr th:each="student : ${students}">
+        <td th:text="${student.id}"></td>
+        <td th:text="${student.first_name}"></td>
+        <td th:text="${student.second_name}"></td>
+        <td th:text="${student.age}"></td>
+        <!-- Ajoutez d'autres colonnes au besoin -->
+    </tr>
+    </tbody>
+</table>
+<!-- Ajoutez des liens pour les opérations CRUD -->
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Séances</title>
+</head>
+<body>
+<h1>Liste des Séances</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Date de Début</th>
+        <th>Date de Fin</th>
+        <th>Cours</th>
+        <th>Étudiants</th>
+        <!-- Ajoutez d'autres colonnes au besoin -->
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Utilisez Thymeleaf pour boucler à travers les données des séances -->
+    <tr th:each="seance : ${seances}">
+        <td th:text="${seance.id}"></td>
+        <td th:text="${seance.datedebut}"></td>
+        <td th:text="${seance.datefin}"></td>
+        <td th:text="${seance.cours}"></td>
+        <td>
+            <!-- Bouclez à travers les étudiants associés à chaque séance -->
+            <span th:each="student : ${seance.students}">
+                        <span th:text="${student.firstName + ' ' + student.secondName}"></span>,
+                    </span>
+        </td>
+        <!-- Ajoutez d'autres colonnes au besoin -->
+    </tr>
+    </tbody>
+</table>
+<!-- Ajoutez des liens pour les opérations CRUD -->
+</body>
+</html>
